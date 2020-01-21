@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cousine:400,400i,700|Lily+Script+One&display=swap');
 @import "variables";
+@import "menu";
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -11,6 +12,11 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -213,51 +219,7 @@ section {
   background-color: $fBlu;
 }
 
-.header-pizza {
 
-    font-size: 40px;
-    margin: 10px;
-}
-
-.menu-pizza {
-  width: 80%;
-  min-height: 300px;
-  margin: 40px 10px;
-  border: 3px double $fRed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-
-}
-
-.sizes {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  text-align: center;
-}
-
-.size {
-  padding: 0 20px;
-  font-weight: 700;
-}
-
-.pizza-item {
-  text-align: center;
-  padding: 10px 20px;
-}
-
-h3.pizza-title {
-  display: block;
-  text-transform: capitalize;
-}
-
-.pizza-desc {
-  padding-bottom: 5px;
-  border-bottom: 2px dashed $fBlu;
-}
 
 footer {
   min-height: 300px;
