@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cousine:400,400i,700|Lily+Script+One&display=swap');
 @import "variables";
+@import "hero";
 @import "menu";
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -11,6 +12,7 @@ html {
   font-family: 'Cousine', monospace, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: $lYel;
 }
 
 * {
@@ -99,28 +101,11 @@ div.progress {
   background-color: $fRed;
 }
 
-#logo {
-  max-width: 200px;
-  height: auto;
-  margin-top: 20px;
+.underline-dotted {
+  border-bottom: 2px dashed $fBlu;
 }
 
-h1 {
-  font-family: 'Lily Script One', sans-serif;
-  font-size: 100px;
-  color: $fBlu;
-  text-shadow: 2px 2px 0 #fff;
-  text-align: center;
-  font-weight: 400;
-  user-select: none;
-  transform: skew(-20deg);
-  transform: skew(-20deg) rotate(-5deg);
-  margin: 20px 0 40px;
 
-  @media (max-width: 800px) {
-    font-size: 50px;
-  }
-}
 
 .btn {
   border: 3px solid #FFFFFF;
@@ -133,90 +118,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.hero-container {
-  min-height: 120vh;
-  width: 100vw;
-  background-color: $lYel;
-  position: relative;
-  background-image: url("../img/pizza-bg.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.hero-content {
-  min-height: 100vh;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255,255,255,0.3);
-}
-
-.scroll-to {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 3vh;
-  width: 64px;
-  height: 32px;
-  background-image: url("../img/down-arrow.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.scroll-to-light {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 3vh;
-  width: 64px;
-  height: 32px;
-  background-image: url("../img/down-arrow-light.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.hero-container .skew {
-  width: 100%;
-  height: 200px;
-  position: absolute;
-  z-index: 2;
-  bottom: -120px;
-  left: 0;
-  background-color: $dYel;
-  -ms-transform: skewY(-4deg);
-  /* IE 9 */
-  -webkit-transform: skewY(-4deg);
-  /* Safari 3-8 */
-  transform: skewY(-4deg);
-}
-
-.menu-container {
-  min-height: 100vh;
-  width: 100vw;
-  background-color: $dYel;
-  position: relative;
-  z-index: 3;
-}
-
-.btn-cta {
-  font-size: 20px;
-  color: #fafafa;
-  background-color: $fBlu;
 }
 
 

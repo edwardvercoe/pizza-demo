@@ -1,15 +1,40 @@
 #menu {
-  margin-top: 300px;
+  position: relative;
   width: 100%;
+  color: black;
+  z-index: 9;
+  padding-bottom: 200px;
+  background-image: url(/img/bg-ingredients-50.png);
+  /* The image used */
+  background-color: $lYel;
+  /* Used if the image is unavailable */
+  height: auto;
+  background-position: left top;
+  background-repeat: repeat;
+  /* Do not repeat the image */
 
-  #masonry{
+  .menu-header {
+    font-family: 'Lily Script One', sans-serif;
+    font-size: 120px;
+    text-shadow: 3px 3px 0 $blac;
+    color: $fRed;
+    text-align: center;
+    font-weight: 400;
+    user-select: none;
+    transform: skew(-20deg);
+    transform: skew(-20deg) rotate(-5deg);
+    margin: 0 0 100px 0;
+  }
+
+  #masonry {
     display: flex;
     flex-flow: column wrap;
+
     max-width: 1400px;
     width: 100%;
   }
 
-  .masonry-panel{
+  .masonry-panel {
     width: 50%;
     /*will not wrap if use max-width*/
 
@@ -17,112 +42,122 @@
     padding: 5px;
     min-width: 100px;
   }
+
+
   .masonry-panel:nth-child(2) {
-    margin-top: 80px;
+   margin-top: 0;
+
+    @include tablet-portrait-up {
+      margin-top: 0;
+    }
+    @include tablet-landscape-up {
+      margin-top: -50px;
+    }
   }
 
-  .masonry-content{
+  .masonry-content {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
+    flex-wrap: wrap;
     font-size: 20px;
-
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     overflow: hidden;
-    background-color: green;
+    background-color: rgba(246, 233, 208, 0.5);
   }
-  /*.masonry-img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    overflow: hidden;
-  }*/
+
 
   /* set panel with according to scree-size */
   /* These settings has to be consistant with 'mansonrySettings' in JS file */
-  @media screen and (min-width:769px) and (max-width:992px){
-    .masonry-panel{
+  @media screen and (min-width:769px) and (max-width:992px) {
+    .masonry-panel {
       width: 50%;
     }
   }
 
 
-  @media screen and (min-width:430px) and (max-width:768px){
-    .masonry-panel{
+  @media screen and (min-width:430px) and (max-width:768px) {
+    .masonry-panel {
       width: 100%;
     }
   }
 
-  @media screen and (max-width:430px){
-    .masonry-panel{
+  @media screen and (max-width:430px) {
+    .masonry-panel {
       width: 100%;
     }
   }
 
 }
 
+.menu-heading {
+  font-family: 'Lily Script One', sans-serif;
+  font-size: 80px;
+  color: $fGre;
+  text-shadow: 2px 2px 0 $blac;
+  text-align: center;
+  font-weight: 400;
+  user-select: none;
+  transform: skew(-20deg);
+  transform: skew(-20deg) rotate(-5deg);
+  margin: 20px 0 40px;
+  flex: 0 0 100%;
+  margin: 0;
+
+}
+
+.food-wrapper {
+
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.food-wrapper-oneCol {
+
+  width: 75%;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.sizes {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-align: center;
+}
+
+.size {
+  padding: 0 20px;
+
+
+  p {
+    margin: 0;
+  }
+
+
+  .food-size {
+    font-size: $f-mob;
+    font-weight: 700;
+  }
+}
+
+.food-item {
+  text-align: center;
+  padding: 0px 20px;
+}
+
+h3.food-title {
+  display: block;
+  text-transform: Uppercase;
+  margin: 10px 0px;
+}
+
+.food-desc {
+  border-bottom: 2px dashed $fBlu;
+  font-size: $f-mob;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .header-pizza {
-
-//   font-size: 40px;
-//   margin: 10px;
-// }
-
-// .menu-pizza {
-// width: 80%;
-// min-height: 300px;
-// margin: 40px 10px;
-// border: 3px double $fRed;
-// display: flex;
-// align-items: center;
-// justify-content: center;
-// flex-wrap: wrap;
-// text-align: center;
-
-// }
-
-// .sizes {
-// display: flex;
-// justify-content: center;
-// text-align: center;
-// text-align: center;
-// }
-
-// .size {
-// padding: 0 20px;
-// font-weight: 700;
-// }
-
-// .pizza-item {
-// text-align: center;
-// padding: 10px 20px;
-// }
-
-// h3.pizza-title {
-// display: block;
-// text-transform: capitalize;
-// }
-
-// .pizza-desc {
-// padding-bottom: 5px;
-// border-bottom: 2px dashed $fBlu;
-// }
+}
