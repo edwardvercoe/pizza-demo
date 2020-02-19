@@ -1,0 +1,94 @@
+.map-container {
+  position: relative;
+
+
+  .skew-footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 9;
+
+
+  }
+
+  .skew-top {
+    background-image: url(/img/bg-ingredients-50.png);
+    /* The image used */
+    background-position: center center;
+    background-repeat: repeat;
+    background-color: #fff;
+    -ms-transform: skewY(-2deg);
+    /* IE 9 */
+    -webkit-transform: skewY(-2deg);
+    /* Safari 3-8 */
+    transform: skewY(-2deg);
+
+    top: -50px;
+    left: 0;
+    border-bottom: 3px solid $dYel;
+
+  }
+
+  .skew-bottom {
+    background-color: $blac;
+    -ms-transform: skewY(2deg);
+    /* IE 9 */
+    -webkit-transform: skewY(2deg);
+    /* Safari 3-8 */
+    transform: skewY(2deg);
+    bottom: -50px;
+    border-top: 3px solid $dYel;
+
+
+  }
+}
+
+
+
+
+footer {
+  min-height: 300px;
+  background-color: $blac;
+  color: #fff;
+  position: relative;
+  padding-bottom: 40px;
+
+
+
+  .footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 10;
+
+    .footer-content {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 900px;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+
+        div {
+          padding: 20px 0;
+          margin: 10px 0;
+
+          &:not(:last-child) {
+            border-bottom: 2px solid #fff;
+          }
+        }
+      }
+
+      .opening-times {
+        line-height: 2;
+      }
+
+
+    }
+  }
+}

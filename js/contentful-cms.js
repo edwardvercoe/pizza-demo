@@ -111,7 +111,6 @@ const client = contentful.createClient({
 })
 
 
-
 function getMenu() {
 
   // PIZZA MENU
@@ -123,20 +122,20 @@ function getMenu() {
           `
           <div class=food-wrapper>
           <div class="food-item">
-            <h3 class="food-title">${entry.fields.pizzaName}</h3>
-            <p class="food-desc">${entry.fields.pizzaDescription}</p>
+            <h3 class="food-title">${entry.fields.pizzaName ? entry.fields.pizzaName:""}</h3>
+            <p class="food-desc">${entry.fields.pizzaDescription ? entry.fields.pizzaDescription:""}</p>
             <div class="sizes">
               <div class="food-sml size">
                 <p class="food-size">Sml</p>
-                <p>${entry.fields.smallPrice}</p>
+                <p>${entry.fields.smallPrice ? entry.fields.smallPrice:""}</p>
               </div>
               <div class="food-med size">
                 <p class="food-size">Med</p>
-                <p>${entry.fields.mediumPrice}</p>
+                <p>${entry.fields.mediumPrice ? entry.fields.mediumPrice:""}</p>
               </div>
               <div class="food-lrg size">
                 <p class="food-size">Lrg</p>
-                <p>${entry.fields.largePrice}</p>
+                <p>${entry.fields.largePrice ? entry.fields.largePrice:""}</p>
               </div>
             </div>
           </div>
@@ -233,14 +232,32 @@ function getMenu() {
       entries.fields.sidesOrder.forEach((entry) => {
         sidesPanel.innerHTML = sidesPanel.innerHTML +
           `
-          <div class=food-wrapper>
-<div class="food-item">
-<h3 class="food-title">${entry.fields.sidesName}</h3>
-<span>$${entry.fields.price}</span>
-<p class="food-desc">${entry.fields.sidesDescription ? entry.fields.sidesDescription:""}</p>
-</div>
-</div>
-`
+          <div class=food-wrapper-oneCol>
+          <div class="food-item">
+            <h3 class="food-title">${entry.fields.sidesName ? entry.fields.sidesName:""}</h3>
+            <p class="food-desc">${entry.fields.sidesDescription ? entry.fields.sidesDescription:""}</p>
+            <p>${entry.fields.priceSingle ? entry.fields.priceSingle:""}</p>
+
+            ${entry.fields.priceSingle ? "":`
+               <div class="sizes">
+                      <div class="food-sml size">
+                        <p class="food-size">Sml</p>
+                        <p>${entry.fields.smallPrice ? entry.fields.smallPrice:"-"}</p>
+                      </div>
+                      <div class="food-med size">
+                        <p class="food-size">Med</p>
+                        <p>${entry.fields.mediumPrice ? entry.fields.mediumPrice:"-"}</p>
+                      </div>
+                      <div class="food-lrg size">
+                        <p class="food-size">Lrg</p>
+                        <p>${entry.fields.largePrice ? entry.fields.largePrice:"-"}</p>
+                      </div>
+                    </div>
+                  `}
+
+          </div>
+        </div>
+        `
       })
     })
     .then(() => {
@@ -309,7 +326,6 @@ function getMenu() {
   client.getEntry('4JnJVJ3EDx2PE2CBIUCRzR')
     .then((entries) => {
       entries.fields.dessertOrder.forEach((entry) => {
-        console.log(entry.fields.singlePrice)
         dessertPanel.innerHTML = dessertPanel.innerHTML +
           `
 <div class=food-wrapper-oneCol>
@@ -355,7 +371,7 @@ function getMenu() {
 <div class="food-item">
 <h3 class="food-title">${entry.fields.gelatoName}</h3>
 <span>$${entry.fields.price}</span>
-<p class="food-desc">${entry.fields.gelatoDescription}</p>
+<p class="food-desc">${entry.fields.gelatoDescription ? entry.fields.gelatoDescription:""}</p>
 </div>
 
 `

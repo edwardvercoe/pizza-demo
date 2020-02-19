@@ -1,12 +1,36 @@
 .hero-container {
-  min-height: 600px;
+  min-height: 900px;
   height: 120vh;
   width: 100vw;
-  background-color: $lYel;
   position: relative;
-  background-image: url("../img/pizza-bg.jpg");
-  background-position: center;
-  background-size: cover;
+
+  .bg-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.3);
+
+  }
+
+  .hero-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/pizza-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
 
   .hero-content {
     min-height: 600px;
@@ -31,9 +55,8 @@
     text-align: center;
     font-weight: 400;
     user-select: none;
-    transform: skew(-20deg);
     transform: skew(-20deg) rotate(-5deg);
-    margin: 20px 0 40px;
+    margin: 20px 0 0 0;
 
     @media (max-width: 800px) {
       font-size: 50px;
@@ -42,41 +65,66 @@
 
   .btn-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-  }
-
-  .btn-cta {
-    font-size: 20px;
-    margin: 0 20px;
-    color: $fWhi;
-    border-color: $fWhi;
-    background-color: $fGre;
-    box-shadow: 5px 5px 0 0 $fGre;
-  }
-
-  .btn-red {
-    background-color: $fRed;
-    box-shadow: 5px 5px 0 0 $fRed;
-
-  }
 
 
+    .hero-btns {
+      padding: 0;
+      list-style-type: none;
 
-  .hero-overlay {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
+
+      li {
+        border: 3px solid $fWhi;
+        font-weight: 700;
+        box-sizing: border-box;
+        width: 15em;
+        height: 3em;
+        font-size: $f-sml;
+        border-radius: 0.5em;
+        margin: 0.5em;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+        color: $fWhi;
+        line-height: 3em;
+        letter-spacing: 3px;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      li:nth-child(odd) {
+        background-color: $fGre;
+        box-shadow: -3px 3px 0 0 $fGre;
+        text-align: left;
+        padding-left: 10%;
+        transform: perspective(500px) rotateY(45deg);
+      }
+
+      li:nth-child(even) {
+        background: $fRed;
+        box-shadow: 3px 3px 0 0 $fRed;
+        text-align: right;
+        padding-right: 10%;
+        transform: perspective(500px) rotateY(-45deg);
+      }
+
+      li:nth-child(odd):hover {
+        transform: perspective(200px) rotateY(45deg);
+        padding-left: 5%;
+      }
+
+      li:nth-child(even):hover {
+        transform: perspective(200px) rotateY(-45deg);
+        padding-right: 5%;
+      }
+
+    }
+
   }
 
   .scroll-to {
     z-index: 99;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     bottom: 100px;
     width: 64px;
     height: 32px;
@@ -103,7 +151,7 @@
     -webkit-transform: skewY(-4deg);
     /* Safari 3-8 */
     transform: skewY(-4deg);
-    border-top: 1px solid $fRed;
+    border-top: 3px solid $dYel;
   }
 
 

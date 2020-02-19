@@ -11,6 +11,7 @@ $fWhi: #fafafa;
 $f-mob: 12px;
 $f-sml: 20px;
 $f-med: 32px;
+$f-lrg: 40px;
 
 // Mixins
 
@@ -33,6 +34,6 @@ $f-med: 32px;
 
 // EG. How to use...
 
-//   @include mobile {
-//      font-size: 1rem;
-//   }
+  // @include mobile {
+  //    font-size: 1rem;
+  // }
