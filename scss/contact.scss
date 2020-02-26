@@ -22,12 +22,16 @@
     top: -20px;
     left: 40px;
 
-    @include tablet-landscape-up {
-      font-size: $f-xl;
-    }
 
     @include mobile {
       font-size: $f-med;
+    }
+    @include tablet-portrait-up {
+      font-size: $f-med;
+    }
+
+    @include desktop {
+      font-size: $f-lrg;
     }
   }
 

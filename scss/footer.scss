@@ -102,8 +102,12 @@ a {
     }
 
     @include tablet-portrait-up {
-      width: 80%;
+      width: 90%;
       font-size: $f-mob;
+    }
+    @include tablet-portrait-up {
+      width: 80%;
+      font-size: $f-xs;
     }
     @include desktop {
       width: 70%;

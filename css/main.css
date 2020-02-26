@@ -838,8 +838,14 @@ footer .contact-container {
 }
 @media (min-width: 600px) {
   footer .contact-container {
-    width: 80%;
+    width: 90%;
     font-size: 12px;
+  }
+}
+@media (min-width: 600px) {
+  footer .contact-container {
+    width: 80%;
+    font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
@@ -1072,6 +1078,11 @@ body.modal-active {
 }
 @media (min-width: 900px) {
   #modal-container .modal-background .modal .contact-container .contact-content .contact-desc, #modal-container .modal-background .modal .contact-container .contact-content .opening-times {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1200px) {
+  #modal-container .modal-background .modal .contact-container .contact-content .contact-desc, #modal-container .modal-background .modal .contact-container .contact-content .opening-times {
     font-size: 20px;
   }
 }
@@ -1129,14 +1140,19 @@ body.modal-active {
   top: -20px;
   left: 40px;
 }
-@media (min-width: 900px) {
-  .contact-container h2.f-banner {
-    font-size: 60px;
-  }
-}
 @media (max-width: 599px) {
   .contact-container h2.f-banner {
     font-size: 32px;
+  }
+}
+@media (min-width: 600px) {
+  .contact-container h2.f-banner {
+    font-size: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-container h2.f-banner {
+    font-size: 40px;
   }
 }
 .contact-container .contact-content {

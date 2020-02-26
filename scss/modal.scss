@@ -94,6 +94,9 @@ body {
               font-size: $f-mob;
             }
             @include tablet-landscape-up {
+              font-size: $f-mob;
+            }
+            @include desktop {
               font-size: $f-sml;
             }
           }
