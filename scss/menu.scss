@@ -3,7 +3,7 @@
   width: 100%;
   color: black;
   z-index: 9;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   background-image: url(/img/bg-ingredients-50.png);
   /* The image used */
   background-color: $lYel;
@@ -24,6 +24,11 @@
     transform: skew(-20deg);
     transform: skew(-20deg) rotate(-5deg);
     margin: 0 0 100px 0;
+
+    @include mobile {
+      font-size: 80px;
+      margin: 0 0 50px 0;
+    }
   }
 
   #masonry {
@@ -38,7 +43,7 @@
     width: 50%;
     /*will not wrap if use max-width*/
     flex: 2 0 auto;
-    padding: 5px;
+    padding: 25px;
     min-width: 100px;
   }
 
@@ -73,7 +78,7 @@
   /* These settings has to be consistant with 'mansonrySettings' in JS file */
   @media screen and (min-width:769px) and (max-width:992px) {
     .masonry-panel {
-      width: 50%;
+      width: 100%;
     }
   }
 
@@ -106,18 +111,34 @@
   flex: 0 0 100%;
   margin: 0;
 
+  @include mobile {
+    font-size: $f-xl;
+  }
 }
 
 .food-wrapper {
 
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.0);
+  width: 75%;
+
+  @include mobile {
+    width: 90%;
+  }
 }
 
 .food-wrapper-oneCol {
 
   width: 75%;
-  background-color: rgba(0, 0, 0, 0.0);
+  @include mobile {
+    width: 90%;
+  }
+}
+
+.food-wrapper-twoCol {
+
+  width: 50%;
+  @include mobile {
+    width: 90%;
+  }
 }
 
 .sizes {
@@ -144,7 +165,7 @@
 
 .food-item {
   text-align: center;
-  padding: 0px 20px;
+  padding: 20px 20px;
 }
 
 h3.food-title {
@@ -154,9 +175,11 @@ h3.food-title {
 }
 
 .food-desc {
-  border-bottom: 2px dashed $fBlu;
+  border-bottom: 2px dashed rgba(0,0,0,0.4);
   font-size: $f-mob;
+}
 
-
-
+.underline-dotted {
+  border-top: 2px dashed rgba(0,0,0,0.4);
+  padding-top: 10px;
 }

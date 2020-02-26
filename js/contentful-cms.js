@@ -4,19 +4,19 @@
 // Set nr of columns for different screen-sizes. These settings has to be consistent with css @media
 const masonrySettings = {
   sm: {
-    width: 430,
+    width: 599,
     columns: 1
   },
   md: {
-    width: 768,
+    width: 600,
     columns: 1
   },
   lg: {
-    width: 992,
-    columns: 2
+    width: 900,
+    columns: 1
   },
   xl: {
-    width: 1500,
+    width: 1200,
     columns: 2
   }
 }
@@ -159,8 +159,8 @@ function getMenu() {
  <div class=food-wrapper>
 <div class="food-item">
 <h3 class="food-title">${entry.fields.pastaName}</h3>
-<span>$${entry.fields.price}</span>
 <p class="food-desc">${entry.fields.pastaDescription}</p>
+<span>${entry.fields.price}</span>
 </div>
 </div>
 `
@@ -181,7 +181,7 @@ function getMenu() {
           <div class=food-wrapper-oneCol>
 <div class="food-item">
 <h3 class="food-title">${entry.fields.risottoName}</h3>
-<span>$${entry.fields.price}</span>
+<span>${entry.fields.price}</span>
 <p class="food-desc">${entry.fields.risottoDescription ? entry.fields.risottoDescription:""}</p>
 </div>
 </div>
@@ -203,6 +203,7 @@ function getMenu() {
           <div class="food-wrapper-oneCol">
           <div class="food-item">
             <h3 class="food-title">${entry.fields.mainsName}</h3>
+            <p class="food-desc">${entry.fields.mainsDescription ? entry.fields.mainsDescription:""}</p>
             <div class="sizes">
               <div class="food-sml size">
                 <p class="food-size">Sml</p>
@@ -213,7 +214,6 @@ function getMenu() {
                 <p>${entry.fields.largePrice ? entry.fields.largePrice:"-"}</p>
               </div>
             </div>
-            <p class="food-desc">${entry.fields.mainsDescription ? entry.fields.mainsDescription:""}</p>
 
           </div>
         </div>
@@ -306,11 +306,11 @@ function getMenu() {
       entries.fields.coffeeOrder.forEach((entry) => {
         coffeePanel.innerHTML = coffeePanel.innerHTML +
           `
-          <div class=food-wrapper>
+          <div class=food-wrapper-twoCol>
 <div class="food-item">
 <h3 class="food-title">${entry.fields.coffeeName}</h3>
-<span>$${entry.fields.price}</span>
 <p class="food-desc">${entry.fields.coffeeDescription ? entry.fields.coffeeDescription:""}</p>
+<p>${entry.fields.price}</p>
 </div>
 </div>
 `
@@ -331,10 +331,10 @@ function getMenu() {
 <div class=food-wrapper-oneCol>
   <div class="food-item">
     <h3 class="food-title">${entry.fields.dessertName}</h3>
-    <p>${entry.fields.singlePrice ? entry.fields.singlePrice:""}</p>
+    <p class="underline-dotted">${entry.fields.singlePrice ? entry.fields.singlePrice:""}</p>
 
     ${entry.fields.singlePrice ? "":`
-       <div class="sizes underline-dotted">
+       <div class="sizes">
               <div class="food-sml size">
                 <p class="food-size">Sml</p>
                 <p>${entry.fields.smallPrice ? entry.fields.smallPrice:"-"}</p>
@@ -367,12 +367,11 @@ function getMenu() {
       entries.fields.gelatoOrder.forEach((entry) => {
         gelatoPanel.innerHTML = gelatoPanel.innerHTML +
           `
-
-<div class="food-item">
-<h3 class="food-title">${entry.fields.gelatoName}</h3>
-<span>$${entry.fields.price}</span>
-<p class="food-desc">${entry.fields.gelatoDescription ? entry.fields.gelatoDescription:""}</p>
-</div>
+  <div class="food-item">
+      <h3 class="food-title">${entry.fields.gelatoName}</h3>
+    <span>${entry.fields.price}</span>
+    <p class="food-desc">${entry.fields.gelatoDescription ? entry.fields.gelatoDescription:""}</p>
+  </div>
 
 `
       })

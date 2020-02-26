@@ -1,0 +1,136 @@
+.contact-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+  z-index: 10;
+  text-align: left;
+
+
+  h2.f-banner {
+    font-family: 'Lily Script One', sans-serif;
+    font-size: $f-lrg;
+    text-shadow: 3px 3px 0 $fWhi;
+    color: $fGre;
+    font-weight: 400;
+    user-select: none;
+    transform: skew(-20deg);
+    transform: skew(-20deg) rotate(-5deg);
+    margin: 0 0 20px 0;
+    position: relative;
+    top: -20px;
+    left: 40px;
+
+    @include tablet-landscape-up {
+      font-size: $f-xl;
+    }
+
+    @include mobile {
+      font-size: $f-med;
+    }
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px 20px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include tablet-portrait-up {
+      flex-direction: row;
+    }
+
+
+
+    .contact-desc {
+
+      @include mobile {
+        line-height: 2;
+        font-size: $f-mob;
+      }
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: $fBlu;
+        font-weight: 700;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 70%;
+        left: -0.1px;
+        right: -0.1px;
+        bottom: 0;
+        transition: top .1s ease-in-out;
+        background-color: rgba(87, 120, 243, 0.5);
+      }
+
+      a:hover::after {
+        top: 0;
+      }
+
+      a.no-hl::after {
+        display: none !important;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+
+        @include mobile {
+          width: 15px;
+          height: 15px;
+        }
+
+        &:hover {
+          -webkit-animation: heartbeat 1.5s ease-in-out both;
+          animation: heartbeat 1.5s ease-in-out both;
+        }
+      }
+    }
+
+    .opening-times {
+      line-height: 2.5;
+
+      @include mobile {
+        line-height: 2;
+        font-size: $f-mob;
+      }
+    }
+  }
+
+
+}
+
+.highlight-ul {
+  position: relative;
+  font-weight: 700;
+  margin: 10px 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 70%;
+    left: -0.1px;
+    right: -0.1px;
+    bottom: 0;
+    transition: top .1s ease-in-out;
+    background-color: rgba(87, 120, 243, 0.5);
+  }
+
+  &:hover::after {
+    top: 0;
+  }
+
+}

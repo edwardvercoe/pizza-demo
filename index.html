@@ -22,7 +22,12 @@
 
   <!-- Add your site or application content here -->
   <div class="progress"></div>
+  <a href="#"><img class="logo-sml" src="img/logo.png" alt="Franks logo"></a>
+  <img class="logo-phone" src="img/phone.svg" alt="Contact information logo">
+  <a href="#"><img class="logo-upArrow" src="img/upArrow.svg" alt="Go to top"></a>
 
+
+  <!-- MODAL -->
   <label>
     <input type='checkbox' name='navCheckbox'>
     <span class='menu'>
@@ -147,31 +152,36 @@
       <div class="map-container">
         <div class="skew-footer skew-top"></div>
 
-        <div class="map-overlay">See map</div>
+        <div class="map-overlay hover-ripple">
+          <p>See map</p>
+        </div>
         <iframe src="https://snazzymaps.com/embed/214162" width="100%" height="400px" style="border:none;"></iframe>
-
-        <div class="skew-footer skew-bottom"></div>
 
       </div>
 
+      <div class="contact-container">
+        <h2 class="f-banner">Frank's Pizza <br> Bar Restaurant</h2>
 
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-desc">
-            <p><strong>Frank's Pizza Bar Restaurant</strong></p>
-            <p>137 Parramatta Rd, Camperdown NSW 2050</p>
-            <p>(02) 9519 3404</p>
+        <div class="contact-content">
+          <div class="contact-desc">
+            <p><a href="https://goo.gl/maps/kSc3dbfdSxGJmzgz5">137 Parramatta Rd,<br>
+                Camperdown NSW 2050</a></p>
+            <p>Call us on <a href="tel:02-9519-3404">(02) 9519 3404</a></p>
+            <p>Email us @ <a href="mailto:frankspizzabar@gmail.com">frankspizzabar@gmail.com</a></p>
+            <p>Find us on <a class="no-hl" href="https://www.facebook.com/Franks.Pizza.Bar/"><img src="img/fb-icon.svg"
+                  alt="Facebook logo"></a></p>
           </div>
           <div class="opening-times">
-            <strong>Opening times:</strong><br>
-            Monday Closed<br>
-            Tuesday 5–10:30pm<br>
-            Wednesday 5–10:30pm<br>
-            Thursday 5–11pm<br>
-            Friday 11am–11pm<br>
-            Saturday 11am–11pm<br>
-            Sunday 11am–10:30pm
-
+            <span class="highlight-ul"><strong>Opening times:</strong><br></span>
+            <p>
+              Monday: Closed<br>
+              Tuesday 5pm–10:30pm<br>
+              Wednesday 5pm–10:30pm<br>
+              Thursday 5pm–11pm<br>
+              Friday 5pm–11pm<br>
+              Saturday 5pm–11pm<br>
+              Sunday 11am–10:30pm
+            </p>
           </div>
 
         </div>
@@ -181,6 +191,47 @@
 
 
   </main>
+
+  <!-- MODAL FOR CONTACT -->
+
+  <div id="modal-container">
+    <div class="modal-background">
+      <div class="modal">
+        <div class="contact-container">
+          <h2 class="f-banner">Frank's Pizza <br> Bar Restaurant</h2>
+
+          <div class="contact-content">
+            <div class="contact-desc">
+              <p><a href="https://goo.gl/maps/kSc3dbfdSxGJmzgz5">137 Parramatta Rd,<br>
+                  Camperdown NSW 2050</a></p>
+              <p>Call us on <a href="tel:02-9519-3404">(02) 9519 3404</a></p>
+              <p>Email us @ <a href="mailto:frankspizzabar@gmail.com">frankspizzabar@gmail.com</a></p>
+              <p>Find us on <a class="no-hl" href="https://www.facebook.com/Franks.Pizza.Bar/"><img
+                    src="img/fb-icon.svg" alt="Facebook logo"></a></p>
+            </div>
+            <div class="opening-times">
+              <span class="highlight-ul"><strong>Opening times:</strong><br></span>
+              <p>
+                Monday: Closed<br>
+                Tuesday 5pm–10:30pm<br>
+                Wednesday 5pm–10:30pm<br>
+                Thursday 5pm–11pm<br>
+                Friday 5pm–11pm<br>
+                Saturday 5pm–11pm<br>
+                Sunday 11am–10:30pm
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+          <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+
 
   <script src="js/main.js"></script>
   <script src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js" charset="utf-8"></script>

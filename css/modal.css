@@ -1,0 +1,30 @@
+.toggle {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 20px auto;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  opacity: 0;
+  -webkit-transition: ease-in 0.5s all;
+  -o-transition: ease-in 0.5s all;
+  transition: ease-in 0.5s all;
+  -webkit-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+          transform: translateY(-200%);
+  min-width: 320px;
+  min-height: 300px;
+}
+
+.toggle--active {
+  display: block;
+  opacity: 1;
+  -webkit-transition: ease-in 0.5s all;
+  -o-transition: ease-in 0.5s all;
+  transition: ease-in 0.5s all;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}

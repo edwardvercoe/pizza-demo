@@ -45,6 +45,10 @@
     max-width: 200px;
     height: auto;
     margin-top: 20px;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   h1 {
@@ -58,8 +62,9 @@
     transform: skew(-20deg) rotate(-5deg);
     margin: 20px 0 0 0;
 
-    @media (max-width: 800px) {
-      font-size: 50px;
+    @include mobile {
+      font-size: 46px;
+      margin: 120px 0 30px 0;
     }
   }
 
@@ -90,6 +95,11 @@
         letter-spacing: 3px;
         transition: 0.3s;
         cursor: pointer;
+
+        @include mobile {
+          width: 10em;
+          height:3em;
+        }
       }
 
       li:nth-child(odd) {

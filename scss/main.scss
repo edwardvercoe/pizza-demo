@@ -5,6 +5,9 @@
 @import "menu";
 @import "footer";
 @import "nav";
+@import "modal";
+@import "contact";
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -17,6 +20,13 @@ html {
   scroll-behavior: smooth;
   background-color: $lYel;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -40,6 +50,7 @@ html {
   background: #b3d4fc;
   text-shadow: none;
 }
+
 /*
  * A better looking default horizontal rule
  */
@@ -51,6 +62,7 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -64,6 +76,7 @@ svg,
 video {
   vertical-align: middle;
 }
+
 /*
  * Remove default fieldset styles.
  */
@@ -72,12 +85,14 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 /*
  * Allow only vertical resizing of textareas.
  */
 textarea {
   resize: vertical;
 }
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -87,11 +102,16 @@ textarea {
   color: #000;
   padding: 0.2em 0;
 }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 a {
   text-decoration: none;
+}
+
+.overflowY-none {
+  overflow-y: hidden !important;
 }
 
 div.progress {
@@ -103,12 +123,6 @@ div.progress {
   height: 3px;
   background-color: $fRed;
 }
-
-.underline-dotted {
-  border-bottom: 2px dashed $fBlu;
-}
-
-
 
 .btn {
   border: 3px solid #FFFFFF;
@@ -123,3 +137,64 @@ section {
   align-items: center;
 }
 
+.logo-sml {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 15px;
+  width: 50px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0 8px 6px -6px $blac;
+
+
+}
+
+.logo-visible {
+  opacity: 1 !important;
+  top: 15px !important;
+}
+
+.logo-phone {
+  position: fixed;
+  z-index: 999;
+  top: 15px;
+  right: 100px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid $blac;
+  border-radius: 50%;
+  box-shadow: 0 8px 6px -6px $blac;
+
+
+
+  @include mobile {
+    right: 80px;
+  }
+}
+
+.logo-upArrow {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid $blac;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 6px -6px $blac;
+}
+
+.arrow-visible {
+  opacity: 0.5 !important;
+  bottom: 15px !important;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
