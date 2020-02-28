@@ -103,6 +103,9 @@ const coffeePanel = document.querySelector(".coffee-panel");
 const dessertPanel = document.querySelector(".dessert-panel");
 const gelatoPanel = document.querySelector(".gelato-panel");
 
+const openingTimes = document.querySelectorAll(".opening-times-container");
+
+
 
 const client = contentful.createClient({
   space: 'tisb3kgmtrw9',
@@ -124,20 +127,22 @@ function getMenu() {
           <div class="food-item">
             <h3 class="food-title">${entry.fields.pizzaName ? entry.fields.pizzaName:""}</h3>
             <p class="food-desc">${entry.fields.pizzaDescription ? entry.fields.pizzaDescription:""}</p>
+            ${entry.fields.smallPrice || entry.fields.mediumPrice || entry.fields.largePrice ? `            
             <div class="sizes">
-              <div class="food-sml size">
-                <p class="food-size">Sml</p>
-                <p>${entry.fields.smallPrice ? entry.fields.smallPrice:""}</p>
-              </div>
-              <div class="food-med size">
-                <p class="food-size">Med</p>
-                <p>${entry.fields.mediumPrice ? entry.fields.mediumPrice:""}</p>
-              </div>
-              <div class="food-lrg size">
-                <p class="food-size">Lrg</p>
-                <p>${entry.fields.largePrice ? entry.fields.largePrice:""}</p>
-              </div>
+            <div class="food-sml size">
+              <p class="food-size">Sml</p>
+              <p>${entry.fields.smallPrice ? entry.fields.smallPrice:""}</p>
             </div>
+            <div class="food-med size">
+              <p class="food-size">Med</p>
+              <p>${entry.fields.mediumPrice ? entry.fields.mediumPrice:""}</p>
+            </div>
+            <div class="food-lrg size">
+              <p class="food-size">Lrg</p>
+              <p>${entry.fields.largePrice ? entry.fields.largePrice:""}</p>
+            </div>
+          </div>`:""}
+
           </div>
         </div>
 `
@@ -384,3 +389,21 @@ function getMenu() {
 }
 
 getMenu();
+
+
+if (client.getEntry('4xFwldARpCMzIOTXB8yyJE') != null) {
+  client
+    .getEntry('4xFwldARpCMzIOTXB8yyJE')
+    .then(entry => {
+
+      const rawRichTextField = entry.fields.franksOpeningTimes;
+      return documentToHtmlString(rawRichTextField);
+    })
+    .then(renderedHtml => {
+      // do something with html, like write to a file
+      openingTimes.forEach(x => {
+        x.innerHTML = renderedHtml;
+      })
+    })
+    .catch(error => console.log(error));
+}

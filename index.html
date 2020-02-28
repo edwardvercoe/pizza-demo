@@ -1,11 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
+  <title>Frank's Pizza Bar Restaurant located in Camperdown.</title>
+  <meta name="description"
+    content="Pasta and traditional thin-crust pizza, plus homemade gelato, in a lively and rustic interior.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="apple-touch-icon" href="icon.png">
@@ -155,7 +156,8 @@
         <div class="map-overlay hover-ripple">
           <p>See map</p>
         </div>
-        <iframe src="https://snazzymaps.com/embed/214162" width="100%" height="400px" style="border:none;"></iframe>
+        <iframe title="Interactive map for Franks Pizza bar" src="https://snazzymaps.com/embed/214162" width="100%"
+          height="400px" style="border:none;"></iframe>
 
       </div>
 
@@ -173,15 +175,11 @@
           </div>
           <div class="opening-times">
             <span class="highlight-ul"><strong>Opening times:</strong><br></span>
-            <p>
-              Monday: Closed<br>
-              Tuesday 5pm–10:30pm<br>
-              Wednesday 5pm–10:30pm<br>
-              Thursday 5pm–11pm<br>
-              Friday 5pm–11pm<br>
-              Saturday 5pm–11pm<br>
-              Sunday 11am–10:30pm
-            </p>
+            <div class="opening-times-container">
+              <p>
+                loading...
+              </p>
+            </div>
           </div>
 
         </div>
@@ -211,15 +209,11 @@
             </div>
             <div class="opening-times">
               <span class="highlight-ul"><strong>Opening times:</strong><br></span>
-              <p>
-                Monday: Closed<br>
-                Tuesday 5pm–10:30pm<br>
-                Wednesday 5pm–10:30pm<br>
-                Thursday 5pm–11pm<br>
-                Friday 5pm–11pm<br>
-                Saturday 5pm–11pm<br>
-                Sunday 11am–10:30pm
-              </p>
+              <div class="opening-times-container">
+                <p>
+                  loading...
+                </p>
+              </div>
             </div>
 
           </div>
@@ -233,17 +227,31 @@
   </div>
 
 
-  <script src="js/main.js"></script>
   <script src="https://unpkg.com/contentful@7.0.5/dist/contentful.browser.min.js" charset="utf-8"></script>
+  <script>
+    var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below
+
+  </script>
+  <script src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"
+    charset="utf-8"></script>
+  <script src="js/main.js"></script>
   <script src="js/contentful-cms.js"></script>
 
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152066766-2"></script>
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-152066766-2');
+
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
+
 </body>
 
 </html>
