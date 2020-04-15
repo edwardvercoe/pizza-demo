@@ -104,6 +104,11 @@ body {
 
         p {
           margin: 10px 0;
+
+          @include mobile {
+            margin: 0;
+            padding: 0;
+          }
         }
       }
 

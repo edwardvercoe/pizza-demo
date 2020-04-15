@@ -42,7 +42,7 @@
   }
 
   #logo {
-    max-width: 200px;
+    max-width: 160px;
     height: auto;
     margin-top: 20px;
 
@@ -81,6 +81,7 @@
 
 
       li {
+        font-family: "Cousine", monospace, sans-serif;
         border: 3px solid $fWhi;
         font-weight: 700;
         box-sizing: border-box;
@@ -95,9 +96,17 @@
         letter-spacing: 3px;
         transition: 0.3s;
         cursor: pointer;
+        
+        a {
+          color: inherit;
+
+          @include mobile {
+            font-size: $f-sml;
+          }
+        }
 
         @include mobile {
-          width: 10em;
+          width: 14em;
           height:3em;
         }
       }

@@ -397,7 +397,7 @@
           align-items: center;
 }
 .hero-container #logo {
-  max-width: 200px;
+  max-width: 160px;
   height: auto;
   margin-top: 20px;
 }
@@ -445,6 +445,7 @@
   list-style-type: none;
 }
 .hero-container .btn-wrapper .hero-btns li {
+  font-family: "Cousine", monospace, sans-serif;
   border: 3px solid #fafafa;
   font-weight: 700;
   -webkit-box-sizing: border-box;
@@ -464,9 +465,17 @@
   transition: 0.3s;
   cursor: pointer;
 }
+.hero-container .btn-wrapper .hero-btns li a {
+  color: inherit;
+}
+@media (max-width: 599px) {
+  .hero-container .btn-wrapper .hero-btns li a {
+    font-size: 20px;
+  }
+}
 @media (max-width: 599px) {
   .hero-container .btn-wrapper .hero-btns li {
-    width: 10em;
+    width: 14em;
     height: 3em;
   }
 }
@@ -830,6 +839,9 @@ footer a {
 footer .contact-container {
   margin-top: 80px;
 }
+footer .contact-container h2.f-banner {
+  margin-bottom: 50px;
+}
 @media (max-width: 599px) {
   footer .contact-container {
     width: 100%;
@@ -1088,6 +1100,12 @@ body.modal-active {
 }
 #modal-container .modal-background .modal .contact-container p {
   margin: 10px 0;
+}
+@media (max-width: 599px) {
+  #modal-container .modal-background .modal .contact-container p {
+    margin: 0;
+    padding: 0;
+  }
 }
 #modal-container .modal-background .modal .modal-svg {
   position: absolute;
@@ -1462,4 +1480,14 @@ section {
 }
 .arrow-visible:hover {
   opacity: 1 !important;
+}
+
+.btn-order {
+  background-color: #00B917;
+  color: #fafafa;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid #020968;
+  -webkit-box-shadow: 3px 3px 0px 0px #020968;
+          box-shadow: 3px 3px 0px 0px #020968;
 }

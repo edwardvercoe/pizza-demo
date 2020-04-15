@@ -198,3 +198,13 @@ section {
     opacity: 1 !important;
   }
 }
+
+
+.btn-order {
+  background-color: $fGre;
+  color: $fWhi;
+  display:inline-block;
+  padding: 5px 10px;
+  border: 2px solid $fBlu;
+  box-shadow: 3px 3px 0px 0px $fBlu;
+}
